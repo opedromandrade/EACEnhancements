@@ -1270,7 +1270,10 @@ namespace AudioDataPlugIn
 		try
 		{
 			if (message == NativeMethods.WM_TIMER)
+			{
 				MaybeInstallAlbumMetadataControls(hwnd);
+				MaybeApplyMetadataDefaults(hwnd);
+			}
 			if (message == NativeMethods.WM_NOTIFY &&
 				IsTrackListCustomDraw(hwnd, lParam))
 			{
