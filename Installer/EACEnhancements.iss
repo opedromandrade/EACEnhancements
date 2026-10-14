@@ -25,7 +25,7 @@ Compression=lzma2/max
 SolidCompression=yes
 PrivilegesRequired=admin
 WizardStyle=modern
-CloseApplications=no
+CloseApplications=yes
 RestartApplications=no
 SetupLogging=yes
 UninstallDisplayIcon={app}\EAC.exe
@@ -41,6 +41,12 @@ WelcomeLabel2=This will install [name/ver] on your computer.%n%nImportant: Setup
 [Files]
 Source: "..\Artifacts\EACEnhancements.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\EACEnhancements.example.ini"; DestDir: "{app}"; Flags: ignoreversion onlyifdoesntexist
+Source: "Encoders\flac.exe"; DestDir: "{app}\Flac"; Flags: ignoreversion
+Source: "Encoders\libFLAC.dll"; DestDir: "{app}\Flac"; Flags: ignoreversion
+Source: "Encoders\FLAC-COPYING.LGPL.txt"; DestDir: "{app}\Flac"; Flags: ignoreversion
+Source: "Encoders\FLAC-COPYING.Xiph.txt"; DestDir: "{app}\Flac"; Flags: ignoreversion
+Source: "Encoders\lame.exe"; DestDir: "{app}\Lame"; Flags: ignoreversion
+Source: "Encoders\LAME-COPYING.LGPL.txt"; DestDir: "{app}\Lame"; Flags: ignoreversion
 
 [Code]
 function DirectoryFromRegistryValue(Value: String): String;
